@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Popup Icons</title>
+<style>
+    
+    body {
+        background-color: #645394;
+        color: white;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+    
+    .icon-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .icon {
+        width: 100px;
+        height: 100px;
+        font-size: 50px;
+        background-color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        position: relative;
+    }
+   
+    .dropdown {
+        display: none;
+        position: absolute;
+        background-color: transparent;
+        color: white;
+        width: 150px;
+        padding: 10px;
+        border: 2px solid darkblue;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        top: calc(100% + 10px);
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .text {
+        margin-top: 10px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+   
+    <div class="icon-container">
+        <div class="icon" onclick="openCamera()">📷</div>
+        <div class="dropdown" id="cameraDropdown">
+            <p>Click to open camera</p>
+        </div>
+        <p class="text">Camera</p>
+    </div>
+    
+    
+    <div class="icon-container">
+        <div class="icon" onclick="recordAudio()">🔊</div>
+        <div class="dropdown" id="audioDropdown">
+            <p>Click to start audio recording</p>
+        </div>
+        <p class="text">Audio Recording</p>
+    </div>
+    
+   
+    <div class="icon-container">
+        <div class="icon" onclick="recordVideo()">🎥</div>
+        <div class="dropdown" id="videoDropdown">
+            <p>Click to start video recording</p>
+        </div>
+        <p class="text">Video Recording</p>
+    </div>
+    
+    
+    <div class="icon-container">
+        <div class="icon" onclick="createMessage()">✉</div>
+        <div class="dropdown" id="smsDropdown">
+            <p>Click to create message</p>
+        </div>
+        <p class="text">SMS</p>
+    </div>
+</div>
+
+<script>
+   
+    function openCamera() {
+        alert("Opening camera...");
+       
+    }
+
+    
+    function recordAudio() {
+        alert("Recording audio...");
+       
+    }
+
+    
+    function recordVideo() {
+        alert("Recording video...");
+        
+    }
+
+    
+    function createMessage() {
+        var message = prompt("Enter your message:");
+        if (message !== null && message !== "") {
+            alert("Message created: " + message);
+            
+        } else {
+            alert("No message entered.");
+        }
+    }
+</script>
+
+</body>
+</html>
